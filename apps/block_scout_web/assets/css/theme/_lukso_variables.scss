@@ -7,7 +7,9 @@ $additional-font: #a1ded1;
 $tile-body-a-color: $tertiary;
 $tile-type-block-color: $tertiary;
 $tile-type-progress-bar-color: $tertiary;
-a.tile-title { color: $tertiary !important; }
+a.tile-title {
+  color: $tertiary !important;
+}
 
 // footer
 $footer-background-color: $primary;
@@ -29,15 +31,15 @@ $dashboard-banner-chart-legend-value-color: $primary; // chart labels
 $dashboard-stats-item-value-color: $primary; // stat values
 
 $dashboard-stats-item-border-color: $primary; // stat border
-$dashboard-banner-gradient-start: $secondary; // gradient begin
-$dashboard-banner-gradient-end: $secondary; // gradient end
+$dashboard-banner-gradient-start: $primary; // gradient begin
+$dashboard-banner-gradient-end: $primary; // gradient end
 $dashboard-banner-network-plain-container-background-color: $secondary; // stats bg
 
 // navigation
 $header-icon-border-color-hover: $primary; // top border on hover
 $header-icon-color-hover: $primary; // nav icon on hover
 $dropdown-menu-item-hover-color: $primary !default;
-$dropdown-menu-item-hover-background: rgba($primary, .1) !default;
+$dropdown-menu-item-hover-background: rgba($primary, 0.1) !default;
 
 // buttons
 $btn-line-bg: #fff; // button bg
@@ -53,11 +55,18 @@ $card-tab-active: $primary;
 $dashboard-banner-network-stats-static-image: "/images/lukso_dashboard_image.png";
 
 // Custom home
-$dashboard-banner-network-plain-container-height: 150px;
+$dashboard-banner-network-plain-container-height: 200px;
 
 .layout-container {
+  .dashboard-banner {
+    height: 264px;
+  }
   .dashboard-banner-container {
-    height: auto !important;
+    background-image: linear-gradient(
+      to bottom,
+      $dashboard-banner-gradient-start,
+      $dashboard-banner-gradient-end
+    );
   }
   .dashboard-banner-container::after {
     display: none;
@@ -108,7 +117,7 @@ $dashboard-banner-network-plain-container-height: 150px;
         height: $dashboard-banner-network-plain-container-height;
         margin: 0 0 0 auto;
         order: 150;
-        width: 301px;
+        width: 410;
         box-shadow: none;
 
         @include media-breakpoint-down(lg) {
@@ -153,7 +162,7 @@ $dashboard-banner-network-plain-container-height: 150px;
 
 // Badges
 $badge-neutral-color: $tertiary;
-$badge-neutral-background-color: rgba($tertiary, .1);
+$badge-neutral-background-color: rgba($tertiary, 0.1);
 $api-text-monospace-color: $tertiary;
 
 // Dark theme
